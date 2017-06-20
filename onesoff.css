@@ -38,3 +38,8 @@ html, body {
 	text-decoration: none;
 	margin-left: 15px;
 }
+
+.actions a.disabled {
+	opacity: 0.5;
+	pointer-events: none;
+}

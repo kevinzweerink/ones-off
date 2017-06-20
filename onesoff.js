@@ -27,18 +27,24 @@ var ledger =
 	var actions = document.createElement('div');
 	actions.classList.add('actions');
 
+	var prevLink = document.createElement('a');
+	prevLink.innerHTML = '←';
+	actions.appendChild(prevLink);
+
 	if (prev) {
-		var prevLink = document.createElement('a');
 		prevLink.href = 'http://kevinzweerink.website/ones-off/i/' + prev.name + '/';
-		prevLink.innerHTML = '←';
-		actions.appendChild(prevLink);
+	} else {
+		prevLink.classList.add('disabled');
 	}
 
+	var nextLink = document.createElement('a');
+	nextLink.innerHTML = '→'
+	actions.appendChild(nextLink);
+
 	if (next) {
-		var nextLink = document.createElement('a');
 		nextLink.href = 'http://kevinzweerink.website/ones-off/i/' + next.name + '/';
-		nextLink.innerHTML = '→'
-		actions.appendChild(nextLink);
+	} else {
+		nextLink.classList.add('disabled');
 	}
 
 	nav.appendChild(actions);
